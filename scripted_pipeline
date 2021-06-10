@@ -10,7 +10,7 @@ node('master')
     }
     stage('continousdeploy') 
     {
-    sh 'scp /var/lib/jenkins/workspace/development/webapp/target/webapp.war ubuntu@172.31.62.88:/var/lib/tomcat9/webapps/qaapp.war'
+    sh 'scp /var/lib/jenkins/workspace/development/webapp/target/webapp.war <user>@<ip address>:/var/lib/tomcat9/webapps/qaapp.war'
     }
     stage('continoustest')
     {
@@ -19,6 +19,6 @@ node('master')
     }
     stage('continousdelivery')
     {
-    sh 'scp /var/lib/jenkins/workspace/development/webapp/target/webapp.war ubuntu@172.31.29.126:/var/lib/tomcat9/webapps/prodapp.war'
+    sh 'scp /var/lib/jenkins/workspace/development/webapp/target/webapp.war <user>@<ip address>:/var/lib/tomcat9/webapps/prodapp.war'
     }
 }    
